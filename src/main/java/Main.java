@@ -1,0 +1,21 @@
+import model.Apple;
+import model.Meat;
+import model.Food;
+import service.ShoppingCart;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Meat meat = new Meat(5, 100, false);
+        Apple redApple = new Apple(10,50, true, "red");
+        Apple greenApple = new Apple(8, 60, true, "green");
+
+        Food[] products = {meat, redApple, greenApple};
+
+        ShoppingCart cart = new ShoppingCart(products);
+
+        System.out.println("Сумма без скидки: " + cart.getSumNoDiscount());
+        System.out.println("Сумма со скидкой: " + cart.getSumWithDiscount());
+        System.out.println("Сумма со вегетарианских продуктов в корзине без скидки: " + cart.getSumVegetarianNoDiscount());
+    }
+}
